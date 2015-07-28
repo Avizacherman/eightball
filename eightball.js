@@ -19,6 +19,8 @@ server = net.createServer(function(c) {
 
 			c.on('data', function(data) {
 				input = data.toString().trim();
+				console.log(input)		
+				
 				if (!qMark.test(input)) {
 					c.write(cowsay.say({
 						text: 'MOOOOOOO\r\nThat was not a question!\r\n TRY AGAIN!!!',
@@ -29,6 +31,7 @@ server = net.createServer(function(c) {
 						text: 'MOOOOOOOOOOOOOOO\r\n' + getEightBall(),
 						e: 'uu'
 					})+"\r\n\r\n")
+
 				}
 			})
 
